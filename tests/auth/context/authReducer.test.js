@@ -28,6 +28,19 @@ describe('Pruebas en authReducer', () => {
 
     test('Debe llamar el logout y borrar el nombre y logged en false', () => {
 
+        const state = {
+            logged: true,
+            user: { id: '123', name: 'Juan' }
+        }
+
+        const action = {
+            type: types.logout
+        }
+
+        const newState = authReducer( { logged: false }, action );
+
+        expect( newState ).toEqual({ logged: false });
+
     });
 
 })
